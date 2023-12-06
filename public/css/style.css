@@ -6,6 +6,15 @@
   text-decoration: none;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  height: 100%;
+  margin: 0;
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -19,20 +28,107 @@
   background-color: #0096ff;
 }
 
-.navlinks {
+.logo{
+  color: aliceblue;
+  font-size: 30px;
+}
+
+.nav-links {
   flex: 1;
   text-align: right;
 }
 
-.navlinks ul li {
-  list-style: none;
+.nav-links ul li {
+  list-style-type: none;
   display: inline-block;
   padding: 8px 12px;
   position: relative;
 }
 
-.navlinks ul li a {
-  color: #fff;
+.nav-links ul li a {
+  color: aliceblue;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 25px;
 }
+
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #24418f;
+  display: block;
+  margin: auto;
+  transition: 0.2s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+.intro{
+  position: absolute;
+  text-align: left;
+  height: 100vh;
+  padding: 5% 20%;
+}
+
+.intro h1{
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.intro-btns{
+  display: flex;
+  margin-top: 20px;
+}
+
+.intro-btns ul li{
+  list-style-type: none;
+  display: inline-block;
+  padding: 8px 0;
+  position: relative;
+}
+
+.intro-btns li a {
+  position: relative;
+  color: #24418f;
+  text-decoration: none;
+  font-size: 25px;
+  margin:5px;
+  background: none;
+  width : 150px;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid #24418f;
+  border-radius:3px;
+  cursor: pointer;
+  transition: .8s;
+  overflow: hidden;
+}
+
+.intro-btns li a:hover, .intro-btns li a:active, .intro-btns li a :focus{
+  background: #24418f;
+  color: #fff;
+}
+
+.intro-btns li a::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #24418f;
+  z-index: -1;
+  transition: 0.7s;
+  bottom:0;
+  border-radius: 50% 50% 0 0;
+
+}
+
+.intro-btns li a:hover::before{
+  height: 100%;
+}
+
+
+

@@ -4,26 +4,64 @@
     <title>Portfolio</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
   </head>
 
   <body>
-    <section class="header"> 
+    <section class="header">
       <div class="navbar">
         <div class="logo">
           <a class="logo" href="/">James La</a>
         </div>
         <div class="nav-links">
           <ul>
-            <li><a href="/about">About</a></li>
-            <li><a href="/skills">Skills</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a onclick="scrollToSection('intro')">Intro</a></li>
+            <li><a onclick="scrollToSection('skills')">Skills</a></li>
+            <li><a onclick="scrollToSection('projects')">Projects</a></li>
+            <li><a onclick="scrollToSection('about')">About</a></li>
+            <li><a onclick="scrollToSection('contact')">Contact</a></li>
           </ul>
         </div>
       </div>
+
+      <section class="intro">
+        <h1>Hi, I'm James.</h1>
+        <h1>I'm a full stack developer</h1>
+
+        <div class="intro-btns">
+          <ul>
+            <li>
+              <a href="/">About</a>
+            </li>
+            <li>
+              <a href="/">Skills</a>
+            </li>
+            <li>
+              <a href="/">Projects</a>
+            </li>
+            <li>
+              <a href="/">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </section>
     </section>
 
+    <section class="skills"></section>
 
+    <section class="projects"></section>
+
+    <section class="about"></section>
+
+    <section class="contact"></section>
   </body>
+
+  <script>
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  </script>
 </html>
