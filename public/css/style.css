@@ -6,20 +6,32 @@
   text-decoration: none;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
+body {
   height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+/* Navbar ( Header )*/
 .header {
   position: fixed;
   width: 100%;
+  top: 0;
+  left: 0;
 }
 
+/* NavBar */
 .navbar {
   display: flex;
   padding: 1% 3%;
@@ -28,7 +40,7 @@ body{
   background-color: #0096ff;
 }
 
-.logo{
+.logo {
   color: aliceblue;
   font-size: 30px;
 }
@@ -65,54 +77,57 @@ body{
   width: 100%;
 }
 
-.intro{
-  position: absolute;
+/* INTRO */
+.intro {
   text-align: left;
-  height: 100vh;
-  padding: 5% 20%;
+  width: 100vw;
+  padding: 21% 20%;
+  margin: 0;
 }
 
-.intro h1{
-  font-size: 50px;
-  margin-bottom: 10px;
-}
-
-.intro-btns{
+.intro-btns {
   display: flex;
   margin-top: 20px;
 }
 
-.intro-btns ul li{
+.intro-btns ul li {
   list-style-type: none;
   display: inline-block;
   padding: 8px 0;
   position: relative;
 }
 
-.intro-btns li a {
+.intro-btns a,
+.social-icons:not(.unstyled) a {
   position: relative;
   color: #24418f;
   text-decoration: none;
   font-size: 25px;
-  margin:5px;
+  margin: 5px;
   background: none;
-  width : 150px;
+  width: 150px;
   padding: 10px 20px;
   text-align: center;
   text-transform: uppercase;
   border: 2px solid #24418f;
-  border-radius:3px;
+  border-radius: 3px;
   cursor: pointer;
-  transition: .8s;
+  transition: 0.8s;
   overflow: hidden;
 }
 
-.intro-btns li a:hover, .intro-btns li a:active, .intro-btns li a :focus{
+.intro-btns a:hover,
+.intro-btns a:active,
+.intro-btns a:focus,
+.social-icons a:hover,
+.social-icons a:active,
+.social-icons a:focus {
   background: #24418f;
   color: #fff;
 }
 
-.intro-btns li a::before{
+.intro-btns a::before,
+.social-icons a::before {
   content: "";
   position: absolute;
   left: 0;
@@ -121,14 +136,150 @@ body{
   background: #24418f;
   z-index: -1;
   transition: 0.7s;
-  bottom:0;
+  bottom: 0;
   border-radius: 50% 50% 0 0;
-
 }
 
-.intro-btns li a:hover::before{
+.intro-btns a:hover::before,
+.social-icons a:hover::before {
   height: 100%;
 }
 
+.social-icons {
+  display: flex;
+  margin-top: 20px;
+}
 
+.social-icons ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 8px 10px;
+  position: relative;
+}
 
+.social-icons a:link,
+.social-icons a:visited {
+  color: #24418f;
+  text-decoration: none;
+  font-size: 2.4rem;
+}
+
+/* Skills */
+
+.skills {
+  height: 100vh;
+  width: 100%;
+  background-color: #0096ff;
+  margin: auto;
+}
+
+.myskills {
+  /* position: relative; */
+  text-align: right;
+  padding: 5% 20%;
+  color: #fff;
+}
+
+.skills-divs {
+  border-radius: 6%;
+  text-align: left;
+  color: aliceblue;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: 0.5s;
+  padding: 2%;
+}
+
+.skills-divs .logos {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  padding: 5%;
+}
+
+.myskills h2 {
+  text-decoration: none;
+  transition: 0.2s;
+  font-size: 2rem;
+}
+
+.myskills h2::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #24418f;
+  display: block;
+  margin: auto;
+}
+
+.myskills h2:hover::after {
+  width: 100%;
+}
+
+.skills-divs:hover .logos {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Projects */
+.projects {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  margin: auto;
+}
+
+.myprojects {
+  text-align: left;
+  padding: 20% 20%;
+  color: #000;
+}
+
+/* About */
+.about {
+  height: 100vh;
+  width: 100%;
+  background-color: #0096ff;
+  margin: auto;
+}
+
+.about div {
+  display: flex;
+  align-items: center;
+  padding: 15% 20%;
+  color: #fff;
+}
+
+/* Contact */
+.contact {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  margin: auto;
+}
+
+.contact div {
+  display: flex;
+  align-items: center;
+  padding: 15% 20%;
+  color: #0096ff;
+}
+.contact-col input,
+.contact-col textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 17px;
+  outline: none;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.footer {
+  background-color: gray;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  text-decoration: none;
+}

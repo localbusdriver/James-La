@@ -5,63 +5,154 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/de95fd432b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <section class="header">
       <div class="navbar">
         <div class="logo">
-          <a class="logo" href="/">James La</a>
+          <a class="logo" href="#">James La</a>
         </div>
         <div class="nav-links">
           <ul>
-            <li><a onclick="scrollToSection('intro')">Intro</a></li>
-            <li><a onclick="scrollToSection('skills')">Skills</a></li>
-            <li><a onclick="scrollToSection('projects')">Projects</a></li>
-            <li><a onclick="scrollToSection('about')">About</a></li>
-            <li><a onclick="scrollToSection('contact')">Contact</a></li>
+            <li><a href="#">Intro</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </div>
-
-      <section class="intro">
-        <h1>Hi, I'm James.</h1>
-        <h1>I'm a full stack developer</h1>
-
-        <div class="intro-btns">
-          <ul>
-            <li>
-              <a href="/">About</a>
-            </li>
-            <li>
-              <a href="/">Skills</a>
-            </li>
-            <li>
-              <a href="/">Projects</a>
-            </li>
-            <li>
-              <a href="/">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </section>
     </section>
 
-    <section class="skills"></section>
+    <section class="intro">
+      <h1>
+        Hi, I'm James. <br />
+        I'm a full stack developer
+      </h1>
 
-    <section class="projects"></section>
+      <div class="intro-btns">
+        <ul>
+          <li><a href="#skills">Skills</a></li>
 
-    <section class="about"></section>
+          <li><a href="#projects">Projects</a></li>
 
-    <section class="contact"></section>
+          <li><a href="#about">About</a></li>
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="social-icons">
+        <ul>
+          <li>
+            <a
+              class="unstyled"
+              href="https://www.linkedin.com/in/james-la-36565828b/"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </li>
+          <!-- <li><a href="">GH</a></li> -->
+          <li><a href="">resume</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="myskills">
+        <h1>My Skills</h1>
+
+        <div class="skills-divs">
+          <h2>Frontend</h2>
+          <div class="logos">
+            <img class="logo" src="/assets/html-logo.png" />
+          </div>
+        </div>
+
+        <div class="skills-divs">
+          <h2>Backend</h2>
+          <div class="logos">
+            <img class="logo" src="html-logo.png" />
+          </div>
+        </div>
+
+        <div class="skills-divs">
+          <h2>Others</h2>
+          <div class="logos">
+            <img class="logo" src="html-logo.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="myprojects">
+        <h2>My Projects</h2>
+
+        <div class="projects-divs">
+          <h3>Project 1</h3>
+          <p>Project 1 description</p>
+        </div>
+
+        <div class="projects-divs">
+          <h3>Project 2</h3>
+          <p>Project 2 description</p>
+        </div>
+
+        <div class="projects-divs">
+          <h3>Project 3</h3>
+          <p>Project 3 description</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="aboutme">
+        <h2>About Me</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+          temporibus natus id. Officiis, neque. Enim accusamus esse non. Quia,
+          placeat eos. Sit velit doloremque aliquid a ratione esse adipisci
+          tempora?
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <form
+          action="https://formsubmit.co/jamesla200210@gmail.com"
+          method="POST"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Please enter your name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Please enter email address"
+            required
+          />
+          <input type="text" name="subject" placeholder="Subject" required />
+          <textarea
+            rows="8"
+            name="comments, questions"
+            placeholder="message"
+          ></textarea>
+          <a type="submit" class=".intro-btns">Send Message</a>
+        </form>
+      </div>
+    </section>
+
+    <section class="footer">
+      <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
+    </section>
   </body>
-
-  <script>
-    function scrollToSection(sectionId) {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  </script>
 </html>
