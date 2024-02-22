@@ -29,7 +29,7 @@ body{
 }
 
 .logo{
-  color: aliceblue;
+  color: #f0f8ff;
   font-size: 30px;
 }
 
@@ -46,7 +46,7 @@ body{
 }
 
 .nav-links ul li a {
-  color: aliceblue;
+  color: #f0f8ff;
   text-decoration: none;
   font-size: 25px;
 }
