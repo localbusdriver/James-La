@@ -1,0 +1,86 @@
+/* INTRO */
+.intro {
+  text-align: left;
+  width: 100vw;
+  padding: 21% 20%;
+  margin: 0;
+}
+
+.intro-btns {
+  display: flex;
+  margin-top: 20px;
+}
+
+.intro-btns ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 8px 0;
+  position: relative;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 20px;
+}
+
+.social-icons ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 8px 0;
+  position: relative;
+}
+
+.social-icons a:link,
+.social-icons a:visited {
+  color: #24418f;
+  text-decoration: none;
+  font-size: 2.4rem;
+}
+
+.intro-btns a,
+.social-icons:not(.unstyled) a {
+  position: relative;
+  color: #24418f;
+  text-decoration: none;
+  font-size: 25px;
+  margin: 5px;
+  background: none;
+  width: 150px;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid #24418f;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.8s;
+  overflow: hidden;
+}
+
+.intro-btns a:hover,
+.intro-btns a:active,
+.intro-btns a:focus,
+.social-icons a:hover,
+.social-icons a:active,
+.social-icons a:focus {
+  background: #24418f;
+  color: #f0f8ff;
+}
+
+.intro-btns a::before,
+.social-icons a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #24418f;
+  z-index: -1;
+  transition: 0.7s;
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.intro-btns a:hover::before,
+.social-icons a:hover::before {
+  height: 100%;
+}

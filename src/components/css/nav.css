@@ -1,0 +1,54 @@
+/* Navbar ( Header )*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* NavBar */
+.navbar {
+  display: flex;
+  padding: 1% 3%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0096ff;
+}
+
+.logo {
+  color: #f0f8ff;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: #f0f8ff;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #24418f;
+  display: block;
+  margin: auto;
+  transition: 0.2s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}

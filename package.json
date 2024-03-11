@@ -1,18 +1,55 @@
 {
-  "name": "james-la",
-  "version": "1.0.0",
-  "description": "Portfolio Website",
-  "main": "app.js",
-  "scripts": {
-    "run": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "James La",
-  "license": "ISC",
+  "name": "portolio-main",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "ejs": "^3.1.9",
+    "@babel/register": "^7.23.7",
+    "@remix-run/router": "^1.15.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.3.3",
+    "chokidar": "^3.6.0",
+    "core-js": "^3.36.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.18.2",
-    "path": "^0.12.7"
+    "ignore-styles": "^5.0.1",
+    "nodemailer": "^6.9.11",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.1",
+    "react-dom": "^18.2.0",
+    "react-multi-carousel": "^2.8.4",
+    "react-router-dom": "^6.22.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "next dev"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
