@@ -1,4 +1,3 @@
-import "./css/about.css";
 import React from "react";
 
 export const About = () => {
@@ -12,8 +11,9 @@ export const About = () => {
           placeat eos. Sit velit doloremque aliquid a ratione esse adipisci
           tempora?
         </p>
+
         <div className="education">
-          <h3>Education</h3>
+          <h2>Education</h2>
           <h4>Wellington Boys College</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam
@@ -21,6 +21,7 @@ export const About = () => {
             praesentium sapiente, non obcaecati, ullam, molestias provident
             aperiam quia magni architecto quae rem!
           </p>
+
           <h4>Victoria University of Wellington</h4>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi cum

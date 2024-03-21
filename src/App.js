@@ -1,14 +1,14 @@
-import "./css/App.css";
-import React from "react";
-import { Nav } from "./components/Nav";
-import { Intro } from "./components/Intro";
-import { Skills } from "./components/Skills";
-import Projects from "./components/Projects";
-import { About } from "./components/About";
-import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
+import React from 'react';
+import './css/App.css';
+import {Nav} from './components/Nav';
+import {Intro} from './components/Intro';
+import Projects from './components/Projects';
+import {Skills} from './components/Skills';
+import {About} from './components/About';
+import {Contact} from './components/Contact';
+import {Footer} from './components/Footer';
 
-function App() {
+export default function App() {
   return (
     <>
       <Nav />
@@ -21,5 +21,3 @@ function App() {
     </>
   );
 }
-
-export default App;

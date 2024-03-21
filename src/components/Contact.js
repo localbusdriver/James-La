@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 
@@ -21,8 +21,15 @@ export const Contact = () => {
     console.log("sending");
     setButtonText("Sending...");
 
+    if (!formDetails.name || !formDetails.email || !formDetails.message) {
+      console.log("Empty Fields");
+      setStatus({ success: false, message: "Please fill out all fields" });
+       setTitle("Send Message");
+      setButtonText("Send");
+      return;
+    }
     try {
-      let response = await fetch("http://localhost:5000/contact", {
+      let response = await fetch("http://localhost:3000/contact", {
         method: "POST",
         headers: {
           "Content-Type": "Application/json;charset=utf-8",
@@ -31,31 +38,37 @@ export const Contact = () => {
       });
       let result = await response.json;
 
-      setButtonText("Send");
       setFormDetails(formInitialDetails);
 
       if (response.ok) {
         console.log("Message Sent");
-        alert("Message Sent");
         setTimeout(() => {
           setTitle("Sent Message!");
         }, 10000);
-        setStatus({ success: true, message: result.status });
+        setStatus({ success: true, message: "Message Sent" });
+        setButtonText("Send");
       } else {
         console.log(result.status);
-        setStatus({ success: false, message: result.status });
+        setStatus({ success: false, message: "Message not sent" });
       }
     } catch (error) {
       console.error(error);
       setStatus({ success: false, message: error });
     }
   };
+
+  useEffect(() => { 
+    const timer = setTimeout(() => {
+      setStatus({});
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [status]);
+
   return (
     <section className="contact" id="contact">
       <Container>
         <form onSubmit={handleSubmit}>
           <h2>{title}</h2>
-
           <Row>
             <Col sm={6} className="px-1">
               <input

@@ -4,32 +4,29 @@ import React from "react";
 function Projects() {
   const loading = "Loading...";
   const [content, setContent] = useState(loading);
-  // const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    async function fetchProjects() {
+    const getProjects = async () => {
       try {
-      let response = await fetch(`${process.env.API_URL}/projects`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "Application/json;charset=utf-8",
-        },
-      });
+        let response = await fetch(`http://localhost:3000/projects`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "Application/json;charset=utf-8",
+          },
+        });
 
-      if (response.ok) {
-        let result = await response.json();
-        console.log(result);
-        setContent(result);
-        // setLoading(false);
-        // setProjects(proj);
-      } else {
-        console.log("Error:", response.status, response.statusText);
-      }
+        if (response.ok) {
+          let result = await response.json();
+          console.log(result);
+          setContent(result);
+        } else {
+          console.log("Error:", response.status, response.statusText);
+        }
       } catch (error) {
         console.error(error);
       }
-    }
-    fetchProjects();
+    };
+    getProjects();
   }, []);
 
   return (
@@ -37,7 +34,7 @@ function Projects() {
       <div className="myprojects">
         <h2>My Projects</h2>
         {content === loading ? (
-          <p>{content}</p>
+          <p>{loading}</p>
         ) : (
           content.map((project) => (
             <div key={project.id} className="projects-divs">

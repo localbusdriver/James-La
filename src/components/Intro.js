@@ -1,7 +1,7 @@
-import "./css/intro.css";
 import React from "react";
 
 export const Intro = () => {
+
   return (
     <section className="intro" id="intro">
       <h1>
@@ -45,7 +45,9 @@ export const Intro = () => {
             </a>
           </li>
           <li>
-            <a href="https://www.resume.com/">resume</a>
+            <a href="James_La_Resume.pdf" download="James_La_Resume.pdf">
+              resume
+            </a>
           </li>
         </ul>
       </div>

@@ -1,4 +1,3 @@
-import "./css/nav.css";
 import React from "react";
 
 export const Nav = () => {
