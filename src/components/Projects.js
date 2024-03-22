@@ -7,7 +7,7 @@ function Projects() {
   useEffect(() => {
     const getProjects = async () => {
       try {
-        let response = await fetch(`http://localhost:3000/projects`, {
+        let response = await fetch(`http://localhost:8080/projects`, {
           method: "GET",
           headers: {
             "Content-Type": "Application/json;charset=utf-8",

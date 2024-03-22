@@ -30,11 +30,12 @@
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
-  },
+  },"engines": {
+    "node": "18.17.1"
+},
   "scripts": {
-    "go": "react-scripts build && node server/index.js",
-    "ssr": "node server/index.js",
-    "start": "react-scripts start",
+    "go": "react-scripts start",
+    "start": "react-scripts build && node server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
