@@ -28,7 +28,7 @@ export const Contact = () => {
       return;
     }
     try {
-      let response = await fetch("http://localhost:8080/contact", {
+      let response = await fetch("https://james-la.me/contact", {
         method: "POST",
         headers: {
           "Content-Type": "Application/json;charset=utf-8",
