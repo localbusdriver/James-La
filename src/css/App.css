@@ -335,15 +335,20 @@ p.danger {
   width: calc(100% - 30px);
   padding: 15px;
   outline: none;
-  border: 1px solid #ccc;
   box-sizing: border-box;
+  border: 3px solid #24418f;
+  border-radius: 10px;
 }
 
 .contact input[type="text"],
 .contact input[type="email"],
-.contact textarea {
+.contact textarea{
   display: block;
   margin: 17px auto;
+}
+
+.contact textarea{
+  height: 240px;
 }
 
 .contact button {
@@ -351,8 +356,10 @@ p.danger {
   font-weight: 400;
   width: 100px;
   padding: 15px;
+  color:#24418f;
   background-color: #fff;
-  border-radius: 5px;
+  border: 3px solid #24418f;
+  border-radius: 3px;
   transition: 0.8s;
 }
 

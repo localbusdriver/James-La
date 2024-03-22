@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
-
 export const Contact = () => {
   const formInitialDetails = {
     name: "",
@@ -29,7 +28,7 @@ export const Contact = () => {
       return;
     }
     try {
-      let response = await fetch("http://localhost:3000/contact", {
+      let response = await fetch(`http://localhost:3000/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "Application/json;charset=utf-8",
