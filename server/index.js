@@ -1,5 +1,5 @@
 require('ignore-styles');
-
+require('dotenv').config();
 require('@babel/register')({
   ignore: [/(node_module)/],
   presets: [
