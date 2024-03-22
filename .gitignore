@@ -9,7 +9,7 @@ package-lock.json
 /coverage
 
 # production
-/build
+# /build
 /client
 # misc
 .DS_Store
