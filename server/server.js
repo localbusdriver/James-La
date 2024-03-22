@@ -19,7 +19,6 @@ app.use(cors());
 app.use(express.json());
 app.use("/", router);
 
-const PORT = process.env.PORT || 8080;
 app.use("^/$", (req, res, next) => {
   fs.readFile(path.resolve("./build/index.html"), "utf-8", (err, data) => {
     if (err) {
@@ -37,8 +36,9 @@ app.use("^/$", (req, res, next) => {
 
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
-app.listen(PORT, () => {
-  console.log(`App launched on ${PORT}`);
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`App launched on ${port}`);
 });
 
 const contactEmail = nodemailer.createTransport({
