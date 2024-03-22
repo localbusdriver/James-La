@@ -11,10 +11,8 @@ import App from "../src/App";
 
 const app = express();
 const router = express.Router();
-// dotenv.config({
-//   path: "./config/.env",
-// });
 
+dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
