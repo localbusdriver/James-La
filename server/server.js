@@ -15,6 +15,12 @@ const router = express.Router();
 // dotenv.config();
 app.use(cors());
 app.use(express.json());
+
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`App launched on ${port}`);
+});
+
 app.use("/", router);
 
 app.use("^/$", (req, res, next) => {
@@ -33,11 +39,6 @@ app.use("^/$", (req, res, next) => {
 });
 
 app.use(express.static(path.resolve(__dirname, "..", "build")));
-
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log(`App launched on ${port}`);
-});
 
 const contactEmail = nodemailer.createTransport({
   service: "gmail",
