@@ -230,12 +230,89 @@ p.danger {
   width: 100%;
   background-color: #0096ff;
   margin: auto;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
 }
 
-.myprojects {
-  text-align: left;
-  padding: 20% 20%;
+.projects h1{
+  font-size: 40px;
+  font-weight: 700;
+  padding: 14px;
   color: #fff;
+  margin: 14px 10%;
+}
+
+.my-projects {
+  display:flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding: 20px 10%;
+  color: #fff;
+  overflow:hidden;
+}
+
+.project-item{
+  background-color: black !important;
+  height: 750px;
+  border-radius: 15px;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px 10px;
+}
+
+.project-item .img-div{
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.project-item img{
+  width: 25vw;
+}
+
+.project-items h2, .project-item p, .project-item h3{
+  padding: 14px
+}
+.project-item h2{
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.project-item p{
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin-top: 25px;
+}
+
+.project-item .technologies{
+  margin-top: auto;
+  width:100%;
+  display: flex;
+}
+.project-item h3, .technologies ul li{
+  color: rgb(176, 175, 175);
+  font-size: 12px;
+}
+.technologies ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.technologies ul li{
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #fff;
+  border-radius: 5px;
 }
 
 /* SKILLS */

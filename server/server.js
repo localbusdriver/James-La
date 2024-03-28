@@ -2,13 +2,14 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import cors from "cors";
-import nodemailer from "nodemailer";
+import mailer from "./mailer/mailer.js";
 import dotenv from "dotenv";
 
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 
 import App from "../src/App";
+import projects from './data/projectsData.js'
 
 const app = express();
 const router = express.Router();
@@ -41,102 +42,38 @@ app.use("^/$", (req, res, next) => {
 
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
-const contactEmail = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASS,
-  },
-});
-
-contactEmail.verify((error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Ready to Send");
-  }
-});
-
 router.post("/contact", (req, res) => {
-  const name = req.body.name;
-  const email = req.body.email;
-  const message = req.body.message;
-  const mail = {
-    from: name,
-    to: process.env.EMAIL,
-    subject: "Contact Form Submission - Portfolio",
-    html: `<p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Subject: Portfolio Contact Form</p>
-           <p>Message: ${message}</p>`,
-  };
-
-  const confirmationEmail = {
-    from: "James La",
-    to: email,
-    subject: "Email Confirmation",
-    html: `<p>Hi ${name},</p></br />
-          <p>Thank you for your message. I will get back to you as soon as possible.</p><br />
-          <p>Best Regards,</p>
-          <p>James La</p>
-          `,
-  };
-
-  contactEmail.sendMail(mail, (error) => {
-    if (error) {
-      res.json(error);
-      console.log(error);
-    } else {
-      console.log("Message Sent");
-      res.json({ code: 200, status: "Message Sent" });
-      contactEmail.sendMail(confirmationEmail, (error) => {
-        if (error) {
-          console.log(error);
-          res.json(error);
-        } else {
-          console.log("Confirmation Email Sent");
-          res.json({ code: 200, status: "Confirmation Email Sent" });
-        }
-      });
-    }
-  });
-
-  contactEmail.verify((error) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Ready to Send");
-    }
-  });
+  const response = mailer(...req.body);
+  res.status(response.code).json(response.status);
 });
 
 router.get("/projects", (req, res) => {
   try {
-    const projects = [
-      {
-        id: 1,
-        name: "Project 1",
-        description: "This is a description of Project 1",
-      },
-      {
-        id: 2,
-        name: "Project 2",
-        description: "This is a description of Project 2",
-      },
-      {
-        id: 3,
-        name: "Project 3",
-        description: "This is a description of Project 3",
-      },
-      {
-        id: 4,
-        name: "Project 4",
-        description: "This is a description of Project 4",
-      },
-    ];
     res.status(200).json(projects);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
 });
+app.get("/yui.css", function (req, res) {
+  const filePath = path.join(__dirname, "..", "src", "yui", "yui.css");
+  fs.readFile(filePath, "utf8", function (err, data) {
+    if (err) {
+      console.error("Error reading CSS file:", err);
+      res.status(500).send("Internal Server Error");
+      return;
+    }
+    res.setHeader("Content-Type", "text/css");
+    res.send(data);
+  });
+});
+router.get(
+  "/yui", (req, res) => {
+    try {
+      res.status(200).render(path.join(__dirname, "..", 'src', "yui", "yui.ejs"));
+    } catch (e) {
+      console.error(e);
+      res.status(500).send( "Server Error" );
+    }
+  }
+)

@@ -2,7 +2,7 @@ import React from 'react';
 import './css/App.css';
 import {Nav} from './components/Nav';
 import {Intro} from './components/Intro';
-import Projects from './components/Projects';
+import Projects from './components/project-components/Projects';
 import {Skills} from './components/Skills';
 import {About} from './components/About';
 import {Contact} from './components/Contact';
