@@ -1,14 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.e05a521b.css",
-    "main.js": "/static/js/main.c5732616.js",
+    "main.js": "/static/js/main.a8241d62.js",
     "static/media/wbc.png": "/static/media/wbc.d5a89978b8c53fdeec94.png",
+    "static/media/portfolio-logo.svg": "/static/media/portfolio-logo.fc58ff07440ecb4d971359a23910f13d.svg",
     "static/media/flask.svg": "/static/media/flask.bc9c310d8142237735ab0eb6d8734a1d.svg",
     "static/media/dev_productivity.svg": "/static/media/dev_productivity.9bca516b4bb1f1e3215d09da9c5b2a48.svg",
-    "static/media/vuw.svg": "/static/media/vuw.320550b53d65a2c9f36e986e79ad2829.svg",
+    "static/media/vuw.svg": "/static/media/vuw.3c036cf735bba3ec5d96602f0acba8a8.svg",
+    "static/media/sklearn.svg": "/static/media/sklearn.87ac123af0a80c748d9a56f1eed9fe1e.svg",
     "static/media/OpenCV_logo_white.svg": "/static/media/OpenCV_logo_white.f711850233db27c304ed40f19cea3918.svg",
     "static/media/ue5.svg": "/static/media/ue5.35bbd777e5bf274ae588b8252b9a0ae1.svg",
-    "static/media/sklearn.svg": "/static/media/sklearn.92d76f9c7b0e339fbecc4654928e1360.svg",
     "static/media/TensorFlow.svg": "/static/media/TensorFlow.0284ad4b1f9f7debab4fde437e5205f3.svg",
     "static/media/nodejs.svg": "/static/media/nodejs.cccdafa931eebdaea49f5c5ac3ba232f.svg",
     "static/media/github.svg": "/static/media/github.f790d945542e10334acb91ffc91b2063.svg",
@@ -27,10 +28,10 @@
     "static/media/css.svg": "/static/media/css.3ec320225ef851ed26cf9fd1c6ebaa54.svg",
     "static/media/html.svg": "/static/media/html.c1bb84e022ca9d76984d4b943bd678fd.svg",
     "main.e05a521b.css.map": "/static/css/main.e05a521b.css.map",
-    "main.c5732616.js.map": "/static/js/main.c5732616.js.map"
+    "main.a8241d62.js.map": "/static/js/main.a8241d62.js.map"
   },
   "entrypoints": [
     "static/css/main.e05a521b.css",
-    "static/js/main.c5732616.js"
+    "static/js/main.a8241d62.js"
   ]
 }

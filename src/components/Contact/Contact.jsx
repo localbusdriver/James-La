@@ -13,9 +13,6 @@ import { Textarea } from "../ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const formSchema = z.object({
   name: z.string().min(3, {
@@ -45,7 +42,7 @@ function Contact() {
     setButtonText("Sending...");
 
     try {
-      let response = await fetch(`https://${process.env.CONTACT_API}`, {
+      let response = await fetch(`https://www.james-la.me/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "Application/json;charset=utf-8",

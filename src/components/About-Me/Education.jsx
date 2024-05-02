@@ -1,6 +1,7 @@
 import React from "react";
 import vuw from "../../assets/education/vuw.svg";
 import wbc from "../../assets/education/wbc.png";
+
 function Education() {
   return (
     <section id="education" className="p-0">
@@ -17,7 +18,7 @@ function Education() {
               <p>Bachelor of Science, Major in Computer Science</p>
               <p className="italic">2021 - 2024</p>
             </div>
-            <img src={vuw} alt="vuw" className="" width={140} />
+            <img src={vuw} alt="vuw" className="" />
           </div>
 
           <div className="flex flex-row space-x-8">

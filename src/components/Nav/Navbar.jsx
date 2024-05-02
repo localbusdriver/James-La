@@ -1,12 +1,13 @@
 import React from "react";
 import { Button } from "../ui/button";
+import portfolioLogo from "../../assets/portfolio-logo.svg";
 
 function Navbar() {
   return (
     <nav id="nav" className="bg-black">
       <div className="top">
         <a href="#welcome" className="logo flex gap-5">
-          <img src="src/assets/portfolio-logo.svg" width={50} alt="logo" />
+          <img src={portfolioLogo} width={50} alt="logo" />
           James La
         </a>
 

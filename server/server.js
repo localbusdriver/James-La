@@ -32,10 +32,18 @@ app.use("^/$", (req, res, next) => {
       console.log(err);
       return res.status(500).send("Some error happened");
     }
+    
+    const appHTML = ReactDOMServer.renderToString(<App />);
+    const env = process.env;
+    const envString = JSON.stringify(env);
+
     return res.send(
       data.replace(
         '<div id="root"></div>',
-        `<div id="root">${ReactDOMServer.renderToString(<App />)}</div>`
+        `<div id="root">${appHTML}</div>
+        <script>
+          window.env = ${envString};
+        </script>`
       )
     );
   });
