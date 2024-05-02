@@ -42,7 +42,7 @@ function Contact() {
     setButtonText("Sending...");
 
     try {
-      let response = await fetch(`https://www.james-la.me/contact`, {
+      let response = await fetch(`https://james-la.me/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "Application/json;charset=utf-8",
