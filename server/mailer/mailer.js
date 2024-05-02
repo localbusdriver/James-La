@@ -1,9 +1,6 @@
 import nodemailer from "nodemailer";
 
-function mailer({ name, email, message }) {
-  let code = 200;
-  let errorStat = [];
-  let okStat = [];
+async function mailer({ name, email, message }) {
   const contactEmail = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -12,70 +9,59 @@ function mailer({ name, email, message }) {
     },
   });
 
-  contactEmail.verify((error) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Ready to Send");
-    }
-  });
+  try {
+    // verify connection configuration
+    await contactEmail.verify((error) => {
+      if (error) {
+        console.log(`Error at line 17 in mailer.js\n${error}`);
+      } else {
+        console.log("Ready to Send");
+      }
+    });
+    console.log("SMTP Server is ready to send emails");
 
-  const mail = {
-    from: name,
-    to: process.env.EMAIL,
-    subject: "Contact Form Submission - Portfolio",
-    html: `<p>Name: ${name}</p>
+    // send mail to portfolio owner
+    const mail = {
+      from: name,
+      to: process.env.EMAIL,
+      subject: "Contact Form Submission - Portfolio",
+      html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Subject: Portfolio Contact Form</p>
            <p>Message: ${message}</p>`,
-  };
+    };
 
-  const confirmationEmail = {
-    from: "James La",
-    to: email,
-    subject: "Email Confirmation",
-    html: `<p>Hi ${name},</p></br />
+    await contactEmail.sendMail(mail, (error) => {
+      if (error) {
+        console.error(`Error at line 32 in mailer.js\n${error}`);
+        return { code: 400, status: error.toString() };
+      }
+    });
+    console.log("Message Sent");
+
+    // send confirmation email to sender
+    const confirmationEmail = {
+      from: "James La",
+      to: email,
+      subject: "Email Confirmation",
+      html: `<p>Hi ${name},</p></br />
           <p>Thank you for your message. I will get back to you as soon as possible.</p><br />
           <p>Best Regards,</p>
           <p>James La</p>
           `,
-  };
-
-  contactEmail.sendMail(mail, (error) => {
-    if (error) {
-      code = 400;
-      errorStat.push(error);
-      console.log(error);
-    } else {
-      console.log("Message Sent");
-      code = 200;
-      okStat.push("Message Sent");
-      contactEmail.sendMail(confirmationEmail, (error) => {
-        if (error) {
-          console.log(error);
-          code = 400;
-          errorStat.push(error);
-        } else {
-          console.log("Confirmation Email Sent");
-          code = 200;
-          okStat.push("Confirmation Email Sent");
-        }
-      });
-    }
-  });
-
-  contactEmail.verify((error) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Ready to Send");
-    }
-  });
-
-  let res = {
-    code: code,
-    status: okStat ? code === 200 : errorStat,
-  };
-  return res;
+    };
+    await contactEmail.sendMail(confirmationEmail, (error) => {
+      if (error) {
+        console.error(`Error at line 50 in mailer.js\n${error}`);
+        return { code: 400, status: error.toString() };
+      }
+    });
+    console.log("Confirmation Email Sent");
+    
+    return { code: 200, status: "Emails sent successfully" };
+  } catch (error) {
+    console.error(`Failed to send email: ${error}`);
+    return { code: 400, status: error.toString() };
+  }
 }
 export default mailer;

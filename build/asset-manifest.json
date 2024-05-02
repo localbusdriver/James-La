@@ -1,16 +1,36 @@
 {
   "files": {
-    "main.css": "/static/css/main.dfbc7e1c.css",
-    "main.js": "/static/js/main.39db5636.js",
-    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
-    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
-    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "main.css": "/static/css/main.e05a521b.css",
+    "main.js": "/static/js/main.c5732616.js",
+    "static/media/wbc.png": "/static/media/wbc.d5a89978b8c53fdeec94.png",
+    "static/media/flask.svg": "/static/media/flask.bc9c310d8142237735ab0eb6d8734a1d.svg",
+    "static/media/dev_productivity.svg": "/static/media/dev_productivity.9bca516b4bb1f1e3215d09da9c5b2a48.svg",
+    "static/media/vuw.svg": "/static/media/vuw.320550b53d65a2c9f36e986e79ad2829.svg",
+    "static/media/OpenCV_logo_white.svg": "/static/media/OpenCV_logo_white.f711850233db27c304ed40f19cea3918.svg",
+    "static/media/ue5.svg": "/static/media/ue5.35bbd777e5bf274ae588b8252b9a0ae1.svg",
+    "static/media/sklearn.svg": "/static/media/sklearn.92d76f9c7b0e339fbecc4654928e1360.svg",
+    "static/media/TensorFlow.svg": "/static/media/TensorFlow.0284ad4b1f9f7debab4fde437e5205f3.svg",
+    "static/media/nodejs.svg": "/static/media/nodejs.cccdafa931eebdaea49f5c5ac3ba232f.svg",
+    "static/media/github.svg": "/static/media/github.f790d945542e10334acb91ffc91b2063.svg",
+    "static/media/cpp.svg": "/static/media/cpp.f00d9334f1e6c0da4960a74ebe7769cb.svg",
+    "static/media/java.svg": "/static/media/java.5386b56c3206b6bd70b1053534d73dc3.svg",
+    "static/media/blender.svg": "/static/media/blender.e825fc80b17369b2d3db91e8e16e7493.svg",
+    "static/media/reactLogo.svg": "/static/media/reactLogo.a060cbe85e50deda1d61452cee9de5b2.svg",
+    "static/media/python.svg": "/static/media/python.026a62687ef705a39cfc755d7457859c.svg",
+    "static/media/bootstrap.svg": "/static/media/bootstrap.c2b6db5b07dafc23f205980c22be4ab0.svg",
+    "static/media/tailwind.svg": "/static/media/tailwind.01b29a820264ccd5809848de8be41084.svg",
+    "static/media/express.svg": "/static/media/express.15f91e57d50d360370925770c77c4a9d.svg",
+    "static/media/js.svg": "/static/media/js.081325c6f229605dce15142ddd948d6d.svg",
+    "static/media/pytorch.svg": "/static/media/pytorch.5413053382f5a2ea9a7849b2bc37e50e.svg",
+    "static/media/git.svg": "/static/media/git.43d387b77657117c0e407816cbf72476.svg",
     "index.html": "/index.html",
-    "main.dfbc7e1c.css.map": "/static/css/main.dfbc7e1c.css.map",
-    "main.39db5636.js.map": "/static/js/main.39db5636.js.map"
+    "static/media/css.svg": "/static/media/css.3ec320225ef851ed26cf9fd1c6ebaa54.svg",
+    "static/media/html.svg": "/static/media/html.c1bb84e022ca9d76984d4b943bd678fd.svg",
+    "main.e05a521b.css.map": "/static/css/main.e05a521b.css.map",
+    "main.c5732616.js.map": "/static/js/main.c5732616.js.map"
   },
   "entrypoints": [
-    "static/css/main.dfbc7e1c.css",
-    "static/js/main.39db5636.js"
+    "static/css/main.e05a521b.css",
+    "static/js/main.c5732616.js"
   ]
 }
