@@ -4,7 +4,7 @@ import wbc from "../../assets/education/wbc.png";
 
 function Education() {
   return (
-    <section id="education" className="p-0">
+    <>
       <div className="flex">
         <div className="w-1/2 bg-white py-32 pl-32">
           <h1 className="text-black text-center ">Education</h1>
@@ -31,7 +31,7 @@ function Education() {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
 export default Education;

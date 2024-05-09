@@ -19,7 +19,7 @@ const projects = [
 
 function Projects() {
   return (
-    <section id="projects" className="text-left px-16 pb-2">
+    <>
       <div className="header pb-20">
         <h2 className="mb-10">My Projects</h2>
         <h6>
@@ -53,7 +53,7 @@ function Projects() {
           </div>
         ))}
       </div>
-    </section>
+    </>
   );
 }
 export default Projects;

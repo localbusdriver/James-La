@@ -15,15 +15,28 @@ import Footer from "./components/footer";
 function App() {
   return (
     <>
+      <div className="scroll-watcher" />
       <Navbar />
       <ArrowUp />
       <main>
-        <Welcome />
-        <Projects />
-        <Skills />
-        <About />
-        <Education />
-        <Courses />
+        <section id="welcome" className="text-left mt-auto px-32 fade-out">
+          <Welcome />
+        </section>
+        <section id="projects" className="text-left px-32 pb-2">
+          <Projects />
+        </section>
+        <section id="skills" className="bg-black pb-0 ">
+          <Skills />
+        </section>
+        <section id="about-me" className="p-0">
+          <About />
+          <section id="education" className="p-0">
+            <Education />
+          </section>
+          <section id="courses" className="w-full flex flex-row gap-10">
+            <Courses />
+          </section>
+        </section>
         <Contact />
         <Footer />
       </main>

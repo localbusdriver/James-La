@@ -6,8 +6,8 @@ function Navbar() {
   return (
     <nav id="nav" className="bg-black">
       <div className="top">
-        <a href="#welcome" className="logo flex gap-5">
-          <img src={portfolioLogo} width={50} alt="logo" />
+        <a href="#welcome" className="logo flex gap-2">
+          <img src={portfolioLogo} width={30} alt="logo" />
           James La
         </a>
 
@@ -19,9 +19,6 @@ function Navbar() {
       </div>
       <div className="bottom">
         <ul>
-          <li>
-            <a href="#welcome">Intro</a>
-          </li>
           <li>
             <a href="#projects">Projects</a>
           </li>

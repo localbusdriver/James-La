@@ -3,7 +3,7 @@ import dev_productivity from "../../assets/dev_productivity.svg";
 
 function About() {
   return (
-    <section id="about-me" className="p-0">
+    <>
       <div className="flex">
         <div className="w-1/2 bg-black text-center p-32">
           <h2 className="text-bold">About Me</h2>
@@ -35,7 +35,7 @@ function About() {
           />
         </div>
       </div>
-    </section>
+    </>
   );
 }
 

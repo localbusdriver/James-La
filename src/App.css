@@ -75,7 +75,7 @@
     @apply text-6xl font-bold mb-2;
   }
   h2 {
-    @apply text-4xl font-bold mb-2;
+    @apply text-4xl font-bold mb-2 ;
   }
   h3 {
     @apply text-2xl font-bold mb-2;
@@ -97,7 +97,7 @@
   }
 
   button a {
-    @apply text-xl cursor-pointer;
+    @apply text-lg cursor-pointer;
   }
   .lb {
     color: var(--light-blue);
@@ -122,6 +122,56 @@
   .skills-grid {
     @apply gap-4 justify-items-center justify-center;
     grid-template-columns: repeat(3, 86px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-watcher {
+    height: 4px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--light-blue);
+    width: 100%;
+    scale: 0 1;
+    opacity: 0.6;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+  }
+  @keyframes scroll-watcher {
+    to {
+      scale: 1 1;
+    }
+  }
+
+  .fade-in {
+    scale: 0.8;
+    opacity: 0;
+    animation: fadeIn linear forwards;
+    animation-timeline: view();
+    animation-range-start: 100px;
+    animation-range-end: 200px;
+  }
+
+  @keyframes fadeIn {
+    to {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+
+  .header-text-animation {
+    scale: 1;
+    opacity: 1;
+    animation: fadeOut linear forwards;
+    animation-timeline: view();
+    animation-range: exit -200px;
+  }
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+    }
   }
 }
 
@@ -168,7 +218,7 @@ nav .top button:hover a {
 
 nav .top .logo {
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 1px;
 }

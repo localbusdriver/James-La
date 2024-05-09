@@ -6,7 +6,7 @@ import {
 } from "../../assets/logos/index";
 function Skills() {
   return (
-    <section id="skills" className="bg-black pb-0 ">
+    <>
       <h1 className="text-center">Technical Skills</h1>
       <div className="mx-auto my-7 w-60 h-0.5 bg-white" />
       <div className="mt-40 bg-gray-16 px-24 pb-32 pt-24 flex flex-row justify-between ">
@@ -14,7 +14,7 @@ function Skills() {
           <h4 className="text-center">Frontend</h4>
           <div className="grid grid-rows-2 skills-grid">
             {frontendSkills.map((skill) => (
-              <img src={skill.src} alt={skill.name} key={skill.id} />
+              <img src={skill.src} alt={skill.name} key={skill.id} className=""/>
             ))}
           </div>
         </div>
@@ -29,6 +29,7 @@ function Skills() {
                 key={skill.id}
                 width={skill.id === 7 ? 80 : "auto"}
                 height={skill.id === 7 ? 80 : "auto"}
+                className=""
               />
             ))}
           </div>
@@ -41,12 +42,12 @@ function Skills() {
             style={{ "gridTemplateColumns": "repeat(4, 75px)" }}
           >
             {otherSkills.map((skill) => (
-              <img src={skill.src} alt={skill.name} key={skill.id} />
+              <img src={skill.src} alt={skill.name} key={skill.id} className=""/>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
 

@@ -5,13 +5,21 @@ import React from "react";
 
 function Welcome() {
   return (
-    <section id="welcome" className="text-left mt-auto px-32">
-      <div className="text-white mb-40">
-        <h1>James La</h1>
+    <>
+      <div className="text-white mb-32">
+        <h1 className="">James La</h1>
         <h1 className="lb">Full Stack Developer</h1>
       </div>
 
-      <div className="flex justify-between align-center gap-5 flex-wrap">
+      <div className="flex justify-between align-center flex-wrap">
+        <div className="flex align-left w-1/2">
+          <p className="text-justify">
+            As a computer science student, I have been able to develop a diverse
+            range of projects that represent my passion and skills in this
+            field. I have consistently delivered high-quality results. Explore
+            my portfolio below to discover more about my work and my skills.
+          </p>
+        </div>
         <div className="flex flex-col gap-2">
           <div className="flex flex-wrap gap-2">
             <Button>
@@ -45,21 +53,16 @@ function Welcome() {
                 target="_blank"
                 rel="noReferrer"
               >
-                <FontAwesomeIcon icon={faLinkedin} className="h-auto w-6 mt-1" />
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="h-auto w-6 mt-1"
+                />
               </a>
             </Button>
           </div>
         </div>
-        <div className="summary flex align-right w-1/2">
-          <p className="text-justify">
-            As a computer science student, I have been able to develop a diverse
-            range of projects that represent my passion and skills in this
-            field. I have consistently delivered high-quality results. Explore
-            my portfolio below to discover more about my work and my skills.
-          </p>
-        </div>
       </div>
-    </section>
+    </>
   );
 }
 
