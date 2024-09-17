@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
 
 async function handler(req: Request) {
   try {
-    transporter.verify((error) => {
+    transporter.verify((error: Error | null) => {
       if (error) {
         console.error(error);
         const error_msg = `[ERROR] Could not verify transporter\n${error}`;
@@ -26,15 +26,18 @@ async function handler(req: Request) {
     console.log(name, email, message);
 
     const mail = emailTemplate({ name: name, from_email: email, msg: message });
-
-    await transporter.sendMail(mail, (error) => {
-      if (error) {
-        console.error(`[ERROR] Could not send email\n${error}`);
-        const error_msg = `[ERROR] Could not send email\n${error}`;
-        return Response.json({ error_msg }, { status: 500 });
-      } else {
-        console.log("Email sent successfully.");
-      }
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(mail, (error, info) => {
+        if (error) {
+          console.error(`[ERROR] Could not send email\n${error}`);
+          const error_msg = `[ERROR] Could not send email\n${error}`;
+          reject(error);
+          return Response.json({ error_msg }, { status: 500 });
+        } else {
+          console.log("Email sent successfully.");
+          resolve(info);
+        }
+      });
     });
 
     const confirmationMail = confirmationEmailTemplate({
@@ -43,13 +46,17 @@ async function handler(req: Request) {
     });
 
     let confirmationMailStatus: Error | null = null;
-    await transporter.sendMail(confirmationMail, (error) => {
-      if (error) {
-        console.error(`[ERROR] Could not send confirmation email\n${error}`);
-        confirmationMailStatus = error;
-      } else {
-        console.log("Confirmation email sent successfully.");
-      }
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(confirmationMail, (error, info) => {
+        if (error) {
+          console.error(`[ERROR] Could not send confirmation email\n${error}`);
+          confirmationMailStatus = error;
+          reject(error);
+        } else {
+          console.log("Confirmation email sent successfully.");
+          resolve(info);
+        }
+      });
     });
 
     const res = confirmationMailStatus || "Email sent successfully.";
