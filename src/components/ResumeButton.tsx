@@ -26,7 +26,7 @@ const ResumeButton = ({ className }: { className: string }) => {
         </p>
         <div className="flex flex-row overflow-auto justify-center items-center gap-4">
           <Link
-            href="/James-La-Resume.pdf"
+            href="/James-Resume.pdf"
             target="_blank"
             className="px-3 py-2 max-w-max transition border border-accent rounded hover:bg-primary hover:border-primary active:bg-primary active:border-primary"
           >

@@ -57,7 +57,6 @@ const Footer = () => {
           />
         </div>
         <h2>or</h2>
-        {/* <TerminalContact /> */}
         <ContactForm />
       </div>
       <div className="flex mt-20 md:flex-row flex-col gap-8 justify-between items-center">
