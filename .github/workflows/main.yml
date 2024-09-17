@@ -20,14 +20,6 @@ jobs:
           username: ${{ vars.DOCKER_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Docker Hub Description
-        uses: peter-evans/dockerhub-description@v3
-        with:
-          username: ${{ vars.DOCKER_USER }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: ${{ vars.DOCKER_USER }}/my-nextjs-docker
-          readme-filepath: ./README.md
-
       - name: Build and push
         uses: docker/build-push-action@v4.1.1
         with:
