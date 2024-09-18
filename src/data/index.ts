@@ -2,12 +2,6 @@ import { Linkedin, Github } from "../../public/assets/icons/Icons";
 
 export const navItems = [
   {
-    name: "About",
-    icon: "",
-    link: "#about",
-    target: "_self",
-  },
-  {
     name: "Projects",
     icon: "",
     link: "#projects",

@@ -1,7 +1,17 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
+
+const greetings = [
+  "Hello",
+  "Kia ora",
+  "안녕하세요",
+  "Hola",
+  "Bonjour",
+  "你好",
+  "こんにちは",
+];
 
 export const TextGenerateEffect = ({
   words,
@@ -11,6 +21,12 @@ export const TextGenerateEffect = ({
   className?: string;
 }) => {
   const [scope, animate] = useAnimate();
+  const greetingIndexRef = useRef(0);
+  const greetingRef = useRef<HTMLSpanElement>(null);
+  const [currentGreeting, setCurrentGreeting] = useState<string>(
+    greetings[greetingIndexRef.current]
+  );
+
   let wordsArray = words.split(" ");
   useEffect(() => {
     animate(
@@ -25,7 +41,17 @@ export const TextGenerateEffect = ({
     );
   }, [scope.current]);
 
-  const renderWords = () => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      greetingIndexRef.current =
+        (greetingIndexRef.current + 1) % greetings.length;
+      setCurrentGreeting(greetings[greetingIndexRef.current]);
+    }, 3000);
+    greetingRef.current?.classList.add("title");
+    return () => clearInterval(interval);
+  }, [currentGreeting]);
+
+  const renderWords = (): React.ReactElement<any, any> => {
     return (
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
@@ -33,7 +59,7 @@ export const TextGenerateEffect = ({
             <motion.span
               key={word + idx}
               className={` ${
-                idx > 1 ? "text-primary" : "dark:text-white text-black"
+                idx > 0 ? "text-primary" : "dark:text-white text-black"
               } opacity-0`}
             >
               {word}{" "}
@@ -46,10 +72,12 @@ export const TextGenerateEffect = ({
 
   return (
     <div className={cn("font-medium", className)}>
-      {/* mt-4 to my-4 */}
       <div className="my-4">
-        {/* remove  text-2xl from the original */}
-        <div className=" dark:text-white text-black tracking-wide">
+        <div className="dark:text-white text-black tracking-wide flex items-center flex-wrap justify-center">
+          <span ref={greetingRef} className="fadingEffect">
+            {currentGreeting}!
+          </span>
+          &nbsp;
           {renderWords()}
         </div>
       </div>

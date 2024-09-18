@@ -10,11 +10,19 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/data";
 
-export const FloatingNav = ({ className }: { className?: string }) => {
+export const FloatingNav = ({
+  className,
+  topRef,
+}: {
+  className?: string;
+  topRef: React.RefObject<HTMLElement>;
+}) => {
   const { scrollYProgress } = useScroll();
 
   // set true for the initial state so that nav bar is visible in the hero section
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState<boolean>(true);
+
+  const [nameState, setNameState] = useState<string>("James La");
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -33,6 +41,11 @@ export const FloatingNav = ({ className }: { className?: string }) => {
       }
     }
   });
+
+  const handleNameClick = () => {
+    setNameState("나 기턔");
+    topRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -59,6 +72,20 @@ export const FloatingNav = ({ className }: { className?: string }) => {
           border: "1px solid rgba(255, 255, 255, 0.125)",
         }}
       >
+        <div
+          className="min-w-[88px] flex justify-center items-center rounded p-2 group border border-white/[0.5] hover:bg-white/[0.05]"
+          onMouseEnter={() => setNameState("나 기턔")}
+          onMouseLeave={() => setNameState("James La")}
+          onClick={() => handleNameClick()}
+        >
+          <p
+            className={cn(
+              "relative dark:text-neutral-50 items-center flex text-neutral-600 dark:group-hover:text-primary group-hover:text-primary"
+            )}
+          >
+            {nameState}
+          </p>
+        </div>
         {navItems.map((navItem: any, idx: number) => (
           <Link
             key={`link=${idx}`}
@@ -68,7 +95,7 @@ export const FloatingNav = ({ className }: { className?: string }) => {
             )}
             target={navItem.target}
           >
-            <span className="text-sm !cursor-pointer rounded-lg hover:bg-white/[0.05] px-2 py-2">
+            <span className="text-sm !cursor-pointer rounded-lg hover:bg-white/[0.05] p-2">
               {navItem.icon ? navItem.icon : navItem.name}
             </span>
           </Link>

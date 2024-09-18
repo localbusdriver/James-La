@@ -13,7 +13,7 @@ const RecentProjects = () => {
   };
 
   return (
-    <div className="py-20 md:px-20">
+    <section id="projects" className="py-20 md:px-20">
       <h1 className="heading">
         A small selection of{" "}
         <span className="text-primary">recent projects</span>
@@ -117,7 +117,7 @@ const RecentProjects = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

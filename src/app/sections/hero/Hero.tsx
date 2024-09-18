@@ -2,9 +2,9 @@ import { TextGenerateEffect } from "./components/TextGenerateEffect";
 import Image from "next/image";
 import { heroData } from "@/data";
 
-const Hero = () => {
+const Hero = ({ topRef }: { topRef: React.RefObject<HTMLElement> }) => {
   return (
-    <div className="pb-4 pt-36">
+    <section ref={topRef} id="hero" className="pb-4 pt-36">
       <div className="h-screen w-full absolute top-[-300px] left-0 flex items-center justify-center ">
         <Image
           src="/assets/background.svg"
@@ -14,9 +14,9 @@ const Hero = () => {
         />
       </div>
       <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
+        <div className=" md:max-w-2xl max-h-[10px] lg:max-w-[60vw] flex flex-col items-center justify-center">
           <TextGenerateEffect
-            words="Hi! I'm James La"
+            words="I'm James La"
             // words="Transforming Concepts into Seamless User Experiences"
             className="text-5xl md:text-6xl lg:text-7xl font-light"
           />
@@ -57,7 +57,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
