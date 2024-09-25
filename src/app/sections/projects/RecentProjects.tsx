@@ -21,7 +21,7 @@ const RecentProjects = () => {
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-8">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] group"
             key={item.id}
             onClick={() => handleProjectClick(item.link)}
           >
@@ -104,7 +104,7 @@ const RecentProjects = () => {
 
                 <Link
                   href={item.link}
-                  className="flex justify-center items-center text-white/[0.5] hover:text-primary transition ease-in-out delay-100 hover:bg-primary-foreground py-2 px-3 border-b-2 hover:border-primary rounded-t-xl "
+                  className="flex justify-center items-center text-white/[0.5] group-hover:text-primary transition ease-in-out delay-100 group-hover:bg-primary-foreground py-2 px-3 border-b-2 group-hover:border-primary rounded-t-xl "
                   target="_blank"
                 >
                   <p className="flex lg:text-lg font-light md:text-xs text-sm ">

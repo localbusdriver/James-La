@@ -72,16 +72,14 @@ export const FloatingNav = ({
           border: "1px solid rgba(255, 255, 255, 0.125)",
         }}
       >
-        <div
-          className="min-w-[88px] flex justify-center items-center rounded p-2 group border border-white/[0.5] hover:bg-white/[0.05]"
-          onMouseEnter={() => setNameState("나 기턔")}
-          onMouseLeave={() => setNameState("James La")}
-          onClick={() => handleNameClick()}
-        >
+        <div className="min-w-[88px] p-0 flex justify-center items-center rounded group md:border md:border-white/[0.5] hover:bg-white/[0.05] !cursor-pointer">
           <p
             className={cn(
-              "relative dark:text-neutral-50 items-center flex text-neutral-600 dark:group-hover:text-primary group-hover:text-primary"
+              "relative text-sm p-2 dark:text-neutral-50 text-neutral-600 dark:group-hover:text-primary group-hover:text-primary"
             )}
+            onMouseEnter={() => setNameState("나 기턔")}
+            onMouseLeave={() => setNameState("James La")}
+            onClick={() => handleNameClick()}
           >
             {nameState}
           </p>

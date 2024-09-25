@@ -68,7 +68,7 @@ const Links = ({
       }
       onMouseLeave={() => setHover(false)}
     >
-      View Certificate {hover ? "👀" : "🔗"}
+      {education.linkTitle} {hover ? "👀" : "🔗"}
     </Link>
   );
 };
