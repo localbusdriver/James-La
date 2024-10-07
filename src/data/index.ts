@@ -16,7 +16,7 @@ export const navItems = [
   {
     name: "Resume",
     icon: "",
-    link: "/James-Resume.pdf",
+    link: "/James-La-Resume-1-page.pdf",
     target: "_blank",
   },
   {
