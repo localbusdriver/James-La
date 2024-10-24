@@ -28,7 +28,7 @@ export const navItems = [
   {
     name: "",
     icon: Github({ size: "20", fill: "#000" }),
-    link: "https://github.com/james-laa/",
+    link: "https://github.com/localbusdriver/",
     target: "_blank",
   },
 ];
