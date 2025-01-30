@@ -88,6 +88,44 @@ export const heroData = {
 export const projects = [
   {
     id: 1,
+    title: "O'Sushi School Lunch Order Summarizer",
+    des: "Web application that summarizes the orders for O'Sushi's school lunch program.",
+    img: "/assets/o-sushi-img.png",
+    iconLists: [
+      "/assets/icons/tailwind.svg",
+      "/assets/icons/react.svg",
+      "/assets/icons/nextjs.svg",
+    ],
+    link: "https://o-sushi.co/",
+    linkType: "Website",
+  },
+  {
+    id: 2,
+    title: "Nextwork AWS Projects",
+    des: "Follow me as I learn AWS with the help of NextWork!",
+    img: "/assets/nextwork.png",
+    iconLists: [
+      "/assets/icons/nextwork_education_logo.jpeg",
+      "/assets/icons/aws_icon.svg",
+    ],
+    link: "https://github.com/localbusdriver/nextwork-aws-projects",
+    linkType: "Github Repo",
+  },
+  {
+    id: 3,
+    title: "CNN Image Classification",
+    des: "Image classification using Convolutional Neural Networks",
+    img: "/assets/cnn.png",
+    iconLists: [
+      "/assets/icons/sklearn.svg",
+      "/assets/icons/pytorch.svg",
+      "/assets/icons/python-logo-only.svg",
+    ],
+    link: "https://github.com/localbusdriver/ImageClassification",
+    linkType: "Github Repo",
+  },
+  {
+    id: 4,
     title: "Spotify Statistics",
     des: "A web application that displays your Spotify statistics using the Spotify Developer API.",
     img: "/assets/spotify-stats.png",
@@ -100,44 +138,7 @@ export const projects = [
     link: "https://spotify-web-app-five.vercel.app/",
     linkType: "Website",
   },
-  {
-    id: 2,
-    title: "O'Sushi School Lunch Order Summarizer",
-    des: "Web application that summarizes the orders for O'Sushi's school lunch program.",
-    img: "/assets/o-sushi-img.png",
-    iconLists: [
-      "/assets/icons/tailwind.svg",
-      "/assets/icons/react.svg",
-      "/assets/icons/nextjs.svg",
-    ],
-    link: "https://o-sushi-reporter-tvytkzgvwa-ts.a.run.app/",
-    linkType: "Website",
-  },
-  {
-    id: 3,
-    title: "Nextwork AWS Projects",
-    des: "Follow me as I learn AWS with the help of NextWork!",
-    img: "/assets/nextwork.png",
-    iconLists: [
-      "/assets/icons/nextwork_education_logo.jpeg",
-      "/assets/icons/aws_icon.svg",
-    ],
-    link: "https://github.com/localbusdriver/nextwork-aws-projects",
-    linkType: "Github Repo",
-  },
-  {
-    id: 4,
-    title: "CNN Image Classification",
-    des: "Image classification using Convolutional Neural Networks",
-    img: "/assets/cnn.png",
-    iconLists: [
-      "/assets/icons/sklearn.svg",
-      "/assets/icons/pytorch.svg",
-      "/assets/icons/python-logo-only.svg",
-    ],
-    link: "https://github.com/localbusdriver/ImageClassification",
-    linkType: "Github Repo",
-  },
+
   {
     id: 5,
     title: "RESTFUL Web Application",
@@ -157,11 +158,25 @@ export const experience = {
   jobs: [
     {
       id: 1,
+      role: "Help Desk Operator",
+      company: "ECL Group Ltd",
+      location: "Wellington, New Zealand",
+      date: "October 2024 - Present",
+      // img: "/assets/icons/vuw.svg",
+      descriptions: [
+        "Provide frontline technical support for retail systems via phone and email, ensuring timely resolution within SLA standards.",
+        "Troubleshoot and diagnose POS system issues remotely, coordinating with Level 2 support as needed.",
+        "Document all customer interactions and solutions in ticketing system to identify recurring issues and improve service delivery.",
+      ],
+      className: "md:col-span-2",
+    },
+    {
+      id: 2,
       role: "COMP132 Tutor",
       subTitle: "Programming for the Natural and Social Sciences",
       company: "Victoria University of Wellington",
       location: "Wellington, New Zealand",
-      date: "July 2024 - Present",
+      date: "July 2024 - October 2024",
       img: "/assets/icons/vuw.svg",
       descriptions: [
         "Cultivated programming proficiency in 20+ first-time coders by leading COMP132 sessions.",
@@ -171,12 +186,12 @@ export const experience = {
       className: "md:col-span-2",
     },
     {
-      id: 2,
+      id: 3,
       role: "INFO101 Tutor",
       subTitle: "Information Management Systems",
       company: "Victoria University of Wellington",
       location: "Wellington, New Zealand",
-      date: "July 2024 - Present",
+      date: "July 2024 - October 2024",
       img: "/assets/icons/vuw.svg",
       descriptions: [
         "Empowered 50+ students in INFO101 by delivering comprehensive tutoring on information systems, resulting in improvement in class performance and enhanced understanding of business operations, managerial decision-making, and organizational strategy.",
@@ -185,11 +200,11 @@ export const experience = {
       className: "md:col-span-2",
     },
     {
-      id: 3,
+      id: 4,
       role: "Receptionist",
       company: "CityFitness",
       location: "Wellington, New Zealand",
-      date: "June 2023 - Present",
+      date: "June 2023 - December 2024",
       img: "/assets/icons/cityfitness.svg",
       descriptions: [
         "Process payments and maintain accurate records.",
