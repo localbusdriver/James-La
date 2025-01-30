@@ -162,7 +162,7 @@ export const experience = {
       company: "ECL Group Ltd",
       location: "Wellington, New Zealand",
       date: "October 2024 - Present",
-      // img: "/assets/icons/vuw.svg",
+      img: "/assets/icons/ecl_group.svg",
       descriptions: [
         "Provide frontline technical support for retail systems via phone and email, ensuring timely resolution within SLA standards.",
         "Troubleshoot and diagnose POS system issues remotely, coordinating with Level 2 support as needed.",
