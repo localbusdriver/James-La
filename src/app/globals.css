@@ -2,19 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: 'SF Pro';
+  src: url('/fonts/san-francisco-pro/SF-Pro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
-
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 10%;
     --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
@@ -28,7 +31,7 @@ body {
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
-    --radius: 1rem;
+    --radius: 0rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -36,24 +39,34 @@ body {
     --chart-5: 27 87% 67%;
   }
 
+  /* 
+  #1a1a1a -> hsl(0, 0%, 10%) - background
+  #262626 -> hsl(0, 0%, 15%) - foreground  // heading containers etc
+  #e9e9e9 -> hsl(0, 0%, 91%) - primary  // selected or hover or direct eyes
+  #a3a3a3 -> hsl(0, 0%, 64%) - text-secondary // not selected
+  #3c3c3c -> hsl(0, 0%, 24%) - border
+  #505050 -> hsl(0, 0%, 31%) - muted
+  #070707 -> hsl(0, 0%, 3%) - buttons
+*/
+
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
+    --background: 0 0% 10%;
+    --foreground:0, 0%, 15%;
+    --card: 0 0% 10%;
+    --card-foreground:0, 0%, 15%;
+    --popover: 0 0% 10%;
+    --popover-foreground:0, 0%, 15%;
+    --primary: 0, 0%, 91%;
     --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
+    --secondary: 0, 0%, 64%;
+    --secondary-foreground:0, 0%, 15%;
+    --muted: 0, 0%, 31%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 221.2 83.2% 53.3%;
+    --accent-foreground:0, 0%, 15%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
+    --destructive-foreground:0, 0%, 15%;
+    --border: 0, 0%, 24%;
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
     --chart-1: 220 70% 50%;
@@ -69,12 +82,15 @@ body {
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-[#161616] text-foreground;
+    @apply dark bg-background text-foreground;
+    font-family: 'SF Pro', Arial, Helvetica, sans-serif;
   }
+  
 }
 
-.glass-bg{
+.glass-bg {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
