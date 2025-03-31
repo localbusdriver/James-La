@@ -36,7 +36,6 @@ export default function RootLayout({
       >
         <Analytics />
         {children}
-        <Footer />
         <Toaster className="border-gray-500 text-muted" />
       </body>
     </html>
