@@ -114,7 +114,7 @@ const ContentContainer = ({
   contact: any;
 }) => {
   return (
-    <div className="flex w-full cursor-pointer flex-row items-center justify-between text-sm text-muted group-hover:text-blue-600">
+    <div className="flex w-full cursor-pointer flex-row items-center justify-between text-sm text-muted group-hover:text-blue-900">
       <span className="flex flex-row items-center text-sm">
         <span
           className={cn(

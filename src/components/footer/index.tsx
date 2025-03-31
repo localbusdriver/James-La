@@ -74,9 +74,9 @@ const index = () => {
   };
 
   return (
-    <div className="relative bottom-0 left-0 w-full md:px-8">
+    <div className="relative bottom-0 left-0 mx-auto w-[768px]">
       {/* Seperator */}
-      <div className="h-[1px] w-full bg-muted" />
+      <div className="h-[1px] w-full bg-gray-300" />
 
       {/* Footer Content */}
       <div className="flex flex-row items-center justify-between gap-2 py-4">
