@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ui/provider";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
