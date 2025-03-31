@@ -1,38 +1,3 @@
-import { Github, Linkedin } from "../../public/assets/icons/Icons";
-
-export const navItems = [
-  {
-    name: "Projects",
-    icon: "",
-    link: "#projects",
-    target: "_self",
-  },
-  {
-    name: "Experience",
-    icon: "",
-    link: "#experience",
-    target: "_self",
-  },
-  {
-    name: "Resume",
-    icon: "",
-    link: "/James-La-Resume-1-page.pdf",
-    target: "_blank",
-  },
-  {
-    name: "",
-    icon: Linkedin({ size: "20", fill: "#000" }),
-    link: "https://www.linkedin.com/in/lajames/",
-    target: "_blank",
-  },
-  {
-    name: "",
-    icon: Github({ size: "20", fill: "#000" }),
-    link: "https://github.com/localbusdriver/",
-    target: "_blank",
-  },
-];
-
 export const heroData = {
   about: {
     id: 1,
