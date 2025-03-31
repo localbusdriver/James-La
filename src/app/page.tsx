@@ -78,7 +78,7 @@ export default function Home() {
           <div>
             <Link
               href="https://www.wgtn.ac.nz/"
-              className="text-muted hover:text-blue-500"
+              className="text-sm text-muted hover:text-blue-500"
             >
               Te Herenga Waka - Victoria University of Wellington
             </Link>
@@ -109,7 +109,7 @@ export default function Home() {
               <Link
                 href="https://www.eclgroup.co.nz/"
                 target="_blank"
-                className="cursor-pointer text-muted hover:text-blue-500"
+                className="cursor-pointer text-sm text-muted hover:text-blue-500"
               >
                 ECL Group&nbsp;
                 <span className="text-sm text-muted">- Help Desk Operator</span>
@@ -120,7 +120,7 @@ export default function Home() {
               <Link
                 href="https://www.wgtn.ac.nz/"
                 target="_blank"
-                className="cursor-pointer text-muted hover:text-blue-500"
+                className="cursor-pointer text-sm text-muted hover:text-blue-500"
               >
                 Te Herenga Waka&nbsp;
                 <span className="text-sm text-muted">- Tutor</span>

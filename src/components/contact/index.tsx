@@ -70,7 +70,7 @@ const index = () => {
   return (
     <TooltipProvider>
       <ul className="w-full">
-        <li className="mb-1">
+        <li className="mb-3">
           <h5
             className={cn(
               "text-sm font-bold text-[#030303]",
