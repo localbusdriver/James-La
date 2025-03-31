@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { Analytics } from "@vercel/analytics/react";
+
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -21,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>" />
+        <link
+          rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>"
+        />
       </head>
       <body
         className={cn(
@@ -29,10 +34,10 @@ export default function RootLayout({
           "flex min-h-screen flex-col px-4 font-sans lg:px-0"
         )}
       >
+        <Analytics />
         {children}
         <Footer />
         <Toaster className="border-gray-500 text-muted" />
-
       </body>
     </html>
   );
