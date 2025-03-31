@@ -2,7 +2,7 @@ import Header from "@/components/header";
 
 export default function Home() {
   return (
-    <div className="mt-14 px-8">
+    <div className="mt-20 px-8">
       <Header />
     </div>
   );
