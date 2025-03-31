@@ -70,10 +70,10 @@ const index = () => {
   return (
     <TooltipProvider>
       <ul className="w-full">
-        <li className="mb-2">
+        <li className="mb-1">
           <h5
             className={cn(
-              "text-sm font-bold text-muted opacity-80",
+              "text-sm font-bold text-[#030303]",
               nanumMyeongjo.className
             )}
           >
@@ -116,18 +116,17 @@ const ContentContainer = ({
   return (
     <div className="flex w-full cursor-pointer flex-row items-center justify-between text-sm text-muted group-hover:text-blue-600">
       <span className="flex flex-row items-center text-sm">
-        <sup
+        <span
           className={cn(
             sourceCodePro.className,
-            "transition-opacity duration-200 group-hover:opacity-0"
+            "text-xs text-muted opacity-80 transition-opacity duration-200 group-hover:opacity-0"
           )}
         >
           {index + 1}
-        </sup>
-        <span className="-translate-x-[0.4em] -translate-y-[0.4em] scale-75 transform opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+        </span>
+        <span className="-translate-x-[1em] scale-75 transform opacity-0 transition-opacity duration-200 group-hover:opacity-100">
           {contact.icon}
         </span>
-
         <TooltipContainer contact={contact}>
           <span>{contact.name}</span>
         </TooltipContainer>

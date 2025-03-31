@@ -24,8 +24,8 @@ export default function Home() {
           id="heading-container"
           className="flex flex-row items-center gap-3"
         >
-          <h5 className="text-2xl text-muted">James La</h5>
-          <h5 className={cn(nanumMyeongjo.className, "text-xl text-muted")}>
+          <h5 className="text-2xl text-[#030303]">James La</h5>
+          <h5 className={cn(nanumMyeongjo.className, "text-xl text-[#030303]")}>
             [나 제임스]
           </h5>
         </div>
@@ -40,9 +40,9 @@ export default function Home() {
           <p className="text-sm text-muted">
             Graduate of{" "}
             <Link
-              href="https://www.victoria.ac.nz/"
+              href="https://www.wgtn.ac.nz/"
               target="_blank"
-              className="cursor-pointer text-green-700"
+              className="cursor-pointer text-primary"
             >
               Te Herenga Waka - Victoria University of Wellington
             </Link>
@@ -66,19 +66,22 @@ export default function Home() {
         <div className="h-[1px] w-full bg-gray-300" />
 
         {/* Education */}
-        <div id="education" className="space-y-3">
+        <div id="education">
           <h6
             className={cn(
-              "space-y-2 text-sm font-bold text-muted opacity-80",
+              "mb-1 text-sm font-bold text-[#030303]",
               nanumMyeongjo.className
             )}
           >
             Education
           </h6>
           <div>
-            <h5 className="text-muted">
+            <Link
+              href="https://www.wgtn.ac.nz/"
+              className="text-muted hover:text-blue-500"
+            >
               Te Herenga Waka - Victoria University of Wellington
-            </h5>
+            </Link>
             <p className="text-xs text-muted">2021 - 2024</p>
             <p className="text-sm text-muted">
               Bachelor of Science | Major in Computer Science.
@@ -92,32 +95,42 @@ export default function Home() {
         </div>
 
         {/* Work Experience */}
-        <div id="experience" className="space-y-3">
+        <div id="experience" className="space-y-1">
           <h6
             className={cn(
-              "text-sm font-bold text-muted opacity-80",
+              "text-sm font-bold text-[#030303]",
               nanumMyeongjo.className
             )}
           >
             Work Experience
           </h6>
-          <div>
-            <h5 className="text-muted">
-              ECL Group&nbsp;
-              <span className="text-sm text-muted">- Help Desk Operator</span>
-            </h5>
-            <p className="text-xs text-muted">2024 - Present</p>
-          </div>
-          <div>
-            <h5 className="text-muted">
-              Te Herenga Waka&nbsp;
-              <span className="text-sm text-muted">- Tutor</span>
-            </h5>
-            <p className="text-xs text-muted">2024</p>
-            <p className="text-xs text-muted">
-              <span className="font-semibold">Courses:</span>&nbsp;COMP132,
-              INFO101
-            </p>
+          <div className="space-y-3">
+            <div>
+              <Link
+                href="https://www.eclgroup.co.nz/"
+                target="_blank"
+                className="cursor-pointer text-muted hover:text-blue-500"
+              >
+                ECL Group&nbsp;
+                <span className="text-sm text-muted">- Help Desk Operator</span>
+              </Link>
+              <p className="text-xs text-muted">2024 - Present</p>
+            </div>
+            <div>
+              <Link
+                href="https://www.wgtn.ac.nz/"
+                target="_blank"
+                className="cursor-pointer text-muted hover:text-blue-500"
+              >
+                Te Herenga Waka&nbsp;
+                <span className="text-sm text-muted">- Tutor</span>
+              </Link>
+              <p className="text-xs text-muted">2024</p>
+              <p className="text-xs text-muted">
+                <span className="font-semibold">Courses:</span>&nbsp;COMP132,
+                INFO101
+              </p>
+            </div>
           </div>
         </div>
 
