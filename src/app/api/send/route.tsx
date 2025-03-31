@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
-import { emailTemplate, confirmationEmailTemplate } from "./utils";
+
+import { confirmationEmailTemplate, emailTemplate } from "./utils";
 
 const transporter = nodemailer.createTransport({
   service: process.env.MAIL_SERVICE,

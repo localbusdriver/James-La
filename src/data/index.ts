@@ -1,4 +1,4 @@
-import { Linkedin, Github } from "../../public/assets/icons/Icons";
+import { Github, Linkedin } from "../../public/assets/icons/Icons";
 
 export const navItems = [
   {
