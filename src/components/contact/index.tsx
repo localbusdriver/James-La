@@ -35,7 +35,7 @@ const copyText = (text: string) => {
 
 const contact = [
   {
-    name: "+64 21 174 9208",
+    name: "(+64) 21 174 9208",
     onClick: () => copyText("+64 21 174 9208"),
     icon: <PhoneIcon className="h-4 w-4" />,
     tooltip: "Click to copy",
