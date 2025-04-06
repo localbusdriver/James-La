@@ -19,7 +19,7 @@ const nanumMyeongjo = Nanum_Myeongjo({
 export default function Home() {
   return (
     <motion.main
-      className="flex flex-1 items-center justify-center"
+      className="flex flex-1 items-center justify-center py-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -44,28 +44,22 @@ export default function Home() {
 
           <p className="text-sm text-muted">
             Graduate of{" "}
-            <Link
-              href="https://www.wgtn.ac.nz/"
-              target="_blank"
+            <ExternalPageLink
+              title="Te Herenga Waka - Victoria University of Wellington"
+              link="https://www.wgtn.ac.nz/"
               className="cursor-pointer text-primary hover:text-blue-900"
-            >
-              Te Herenga Waka - Victoria University of Wellington&nbsp;
-              <ExternalLink className="mb-1 inline-block h-2 w-2 -translate-y-1 transform" />
-            </Link>
+            />
             , with a Bachelor of Science, majoring in Computer Science.
           </p>
 
           <p className="text-sm text-muted">
             Currently providing support for fuel and retail systems throughout
             Oceania at{" "}
-            <Link
-              href="https://www.eclgroup.co.nz/"
-              target="_blank"
+            <ExternalPageLink
+              title="ECL Group"
+              link="https://www.eclgroup.co.nz/"
               className="cursor-pointer text-primary hover:text-blue-900"
-            >
-              ECL Group.
-              <ExternalLink className="mb-1 inline-block h-2 w-2 -translate-y-1 transform" />
-            </Link>
+            />
           </p>
         </div>
 
@@ -84,32 +78,35 @@ export default function Home() {
           </h6>
           <div className="space-y-3">
             <div>
-              <Link
-                href="https://www.eclgroup.co.nz/"
-                target="_blank"
-                className="cursor-pointer text-sm text-muted hover:text-blue-900"
-              >
-                ECL Group&nbsp;
-                <ExternalLink className="mb-1 inline-block h-2 w-2 -translate-y-1 transform" />
-                &nbsp;
-                <span className="text-sm text-muted">- Help Desk Operator</span>
-              </Link>
+              <ExternalPageLink
+                title="ECL Group"
+                link="https://www.eclgroup.co.nz/"
+              />
+              &nbsp;
+              <span className="text-sm text-muted">- Help Desk Operator</span>
               <p className="text-xs text-muted">2024 - Present</p>
             </div>
             <div>
-              <Link
-                href="https://www.wgtn.ac.nz/"
-                target="_blank"
-                className="cursor-pointer text-sm text-muted hover:text-blue-900"
-              >
-                Te Herenga Waka&nbsp;
-                <span className="text-sm text-muted">- Tutor</span>
-                <ExternalLink className="mb-1 inline-block h-2 w-2 -translate-y-1 transform" />
-              </Link>
+              <ExternalPageLink
+                link="https://www.wgtn.ac.nz/"
+                title="Te Herenga Waka"
+              />
+              &nbsp;
+              <span className="text-sm text-muted">- Tutor</span>
               <p className="text-xs text-muted">2024</p>
               <p className="text-xs text-muted">
-                <span className="font-semibold">Courses:</span>&nbsp;COMP132,
-                INFO101
+                <span className="font-semibold">Courses:</span>&nbsp;
+                <ExternalPageLink
+                  title="COMP132"
+                  link="https://www.wgtn.ac.nz/courses/comp/132/2024/offering?crn=30095"
+                  className="text-xs"
+                />
+                ,&nbsp;
+                <ExternalPageLink
+                  title="INFO101"
+                  link="https://www.wgtn.ac.nz/courses/info/101/2024/offering?crn=10038"
+                  className="text-xs"
+                />
               </p>
             </div>
           </div>
@@ -126,13 +123,10 @@ export default function Home() {
             Education
           </h6>
           <div>
-            <Link
-              href="https://www.wgtn.ac.nz/"
-              className="text-sm text-muted hover:text-blue-900"
-            >
-              Te Herenga Waka - Victoria University of Wellington
-              <ExternalLink className="mb-1 inline-block h-2 w-2 -translate-y-1 transform" />
-            </Link>
+            <ExternalPageLink
+              title="Te Herenga Waka - Victoria University of Wellington"
+              link="https://www.wgtn.ac.nz/"
+            />
             <p className="text-xs text-muted">2021 - 2024</p>
             <p className="text-sm text-muted">
               Bachelor of Science | Major in Computer Science.
@@ -183,3 +177,27 @@ export default function Home() {
     </motion.main>
   );
 }
+
+const ExternalPageLink = ({
+  title,
+  link,
+  className,
+}: {
+  title: string;
+  link: string;
+  className?: string;
+}) => {
+  return (
+    <Link
+      href={link}
+      target="_blank"
+      className={cn(
+        "cursor-pointer text-sm text-muted hover:text-blue-900",
+        className
+      )}
+    >
+      {title}
+      <ExternalLink className="mb-1 inline-block h-2 w-2 -translate-y-1 transform" />
+    </Link>
+  );
+};
