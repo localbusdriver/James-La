@@ -53,11 +53,11 @@ export default function Home() {
           </p>
 
           <p className="text-sm text-muted">
-            Currently providing support for fuel and retail systems throughout
-            Oceania at{" "}
+            Currently implementing Airport Operational Systems (AOS) for major
+            airports airports globally.{" "}
             <ExternalPageLink
-              title="ECL Group"
-              link="https://www.eclgroup.co.nz/"
+              title="Veovo"
+              link="https://www.veovo.com/"
               className="cursor-pointer text-primary hover:text-blue-900"
             />
           </p>
@@ -76,17 +76,23 @@ export default function Home() {
           >
             Work Experience
           </h6>
-          <div className="space-y-3">
-            <div>
+          <ul className="space-y-3">
+            <li>
+              <ExternalPageLink title="Veovo" link="https://www.veovo.com/" />
+              &nbsp;
+              <span className="text-sm text-muted">- Technical Consultant</span>
+              <p className="text-xs text-muted">June 2025 - Present</p>
+            </li>
+            <li>
               <ExternalPageLink
                 title="ECL Group"
                 link="https://www.eclgroup.co.nz/"
               />
               &nbsp;
               <span className="text-sm text-muted">- Help Desk Operator</span>
-              <p className="text-xs text-muted">2024 - Present</p>
-            </div>
-            <div>
+              <p className="text-xs text-muted">November 2024 - May 2025</p>
+            </li>
+            <li>
               <ExternalPageLink
                 link="https://www.wgtn.ac.nz/"
                 title="Te Herenga Waka"
@@ -108,8 +114,8 @@ export default function Home() {
                   className="text-xs"
                 />
               </p>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
 
         {/* Education */}
@@ -151,14 +157,13 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-x-4 text-sm text-muted">
             <p className="col-span-1">Programming Languages:</p>
             <p className="col-span-2">
-              TypeScript, JavaScript, Python, Java, C++, HTML, CSS
+              C#, T-SQL, TypeScript, JavaScript, Python, Java, C++, HTML, CSS
             </p>
-            <p className="col-span-1">Frameworks:</p>
+            <p className="col-span-1">Frameworks/Tools:</p>
             <p className="col-span-2">
-              React, Next.js, Node.js, Tailwind CSS, Node.js
+              Windows Server, MS SQL, .NET, React, Next.js, Node.js, Tailwind
+              CSS
             </p>
-            <p className="col-span-1">Tools:</p>
-            <p className="col-span-2">Unreal Engine 5, Godot 4, Blender</p>
           </div>
         </div>
 
