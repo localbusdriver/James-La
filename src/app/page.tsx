@@ -170,14 +170,14 @@ export default function Home() {
         {/* Socials */}
         <Contact />
 
-        <h6
+        {/* <h6
           className={cn(
             "mt-4 text-sm font-bold text-muted opacity-80",
             nanumMyeongjo.className
           )}
         >
           New Portfolio in progress.
-        </h6>
+        </h6> */}
       </div>
     </motion.main>
   );
