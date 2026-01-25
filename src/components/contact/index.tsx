@@ -54,9 +54,9 @@ const contact = [
   },
   {
     name: "Github",
-    link: "https://github.com/localbusdriver",
+    link: "https://github.com/james-la-dev",
     icon: <GitHubLogoIcon className="h-4 w-4" />,
-    tooltip: "github/localbusdriver",
+    tooltip: "github/james-la-dev",
   },
   {
     name: "Curriculum Vitae",
